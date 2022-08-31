@@ -190,7 +190,8 @@ namespace SqlModelGenerator
             {
                 using (var connection = new SqlConnection(connectionString))
                 {
-                    var sql = @"SELECT COUNT(*) FROM sys.tables";
+                    var sql = @"SELECT COUNT(*) FROM sys.tables
+                                WHERE name NOT LIKE 'sysdiagrams'";
 
                     totalTableCount = connection.QuerySingle<int>(sql);
                 }
