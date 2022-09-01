@@ -813,6 +813,8 @@ namespace SqlModelGenerator
                 // 0:both 1:flutter 2:csharp
                 if (SelectedTable.Length > 1)
                 {
+                    makeSelectedTableSingular(SelectedTable);
+
                     if (comboFilePrefences.SelectedIndex == 0)
                     {
                         WritetoFileforCsharp();
