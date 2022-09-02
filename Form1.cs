@@ -620,14 +620,14 @@ namespace SqlModelGenerator
                 fileText += "import 'package:json_annotation/json_annotation.dart';" + Environment.NewLine + Environment.NewLine;
                 fileText += "part '" + selectedTableSingular.Replace("ý", "i").ToLower() + ".g.dart';" + Environment.NewLine + Environment.NewLine;
                 fileText += "@JsonSerializable()" + Environment.NewLine;
-                fileText += "class " + SelectedTable + " {" + Environment.NewLine + Environment.NewLine;
+                fileText += "class " + selectedTableSingular + " {" + Environment.NewLine + Environment.NewLine;
 
                 fileText += textBoxFlutter.Text;
 
-                fileText += "\t" + SelectedTable + "();" + Environment.NewLine;
+                fileText += "\t" + selectedTableSingular + "();" + Environment.NewLine;
 
-                fileText += "\tfactory " + SelectedTable + ".fromJson (Map<String, dynamic> json) => _$" + SelectedTable + "FromJson(json);" + Environment.NewLine;
-                fileText += "\tMap<String, dynamic> toJson() => _$" + SelectedTable + "ToJson(this);" + Environment.NewLine;
+                fileText += "\tfactory " + selectedTableSingular + ".fromJson (Map<String, dynamic> json) => _$" + selectedTableSingular + "FromJson(json);" + Environment.NewLine;
+                fileText += "\tMap<String, dynamic> toJson() => _$" + selectedTableSingular + "ToJson(this);" + Environment.NewLine;
 
                 fileText += "}";
 
@@ -813,12 +813,17 @@ namespace SqlModelGenerator
                 // 0:both 1:flutter 2:csharp
                 if (SelectedTable.Length > 1)
                 {
-                    makeSelectedTableSingular(SelectedTable);
-
                     if (comboFilePrefences.SelectedIndex == 0)
                     {
                         WritetoFileforCsharp();
                         WritetoFileforFlutter();
+
+                        textBoxFlutter.Clear();
+                        textBoxFlutter.AppendText("The Flutter file was created on the desktop : .dart");
+
+                        textBoxCsharp.Clear();
+                        textBoxCsharp.AppendText("The C# file was created on the desktop : .cs");
+
                     }
                     else if (comboFilePrefences.SelectedIndex == 1)
                     {
