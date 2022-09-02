@@ -522,12 +522,12 @@ namespace SqlModelGenerator
                     }
                     else if (listDataType[i].Contains("varbinary"))
                     {
-                        textBoxFlutter.AppendText("\tList<int> get" + listColumn[i] + "()" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\tString get" + listColumn[i] + "()" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t\treturn " + listColumn[i] + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
 
-                        textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(List<int> " + listColumn[i] + ")" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(String " + listColumn[i] + ")" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i] + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
