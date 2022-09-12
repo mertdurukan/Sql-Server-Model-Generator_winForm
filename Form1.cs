@@ -492,7 +492,7 @@ namespace SqlModelGenerator
 
                         textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(String " + listColumn[i].Replace("ý", "i").ToLower() + ")" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
-                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i] + ";" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i].Replace("ý", "i").ToLower() + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
                     }
                     else if (listDataType[i].Contains("int"))
@@ -504,7 +504,7 @@ namespace SqlModelGenerator
 
                         textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(int " + listColumn[i].Replace("ý","i").ToLower() + ")" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
-                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i] + ";" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i].Replace("ý", "i").ToLower() + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
 
                     }
@@ -517,7 +517,7 @@ namespace SqlModelGenerator
 
                         textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(DateTime " + listColumn[i].Replace("ý","i").ToLower() + ")" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
-                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i] + ";" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i].Replace("ý", "i").ToLower() + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
                     }
                     else if (listDataType[i].Contains("varbinary"))
@@ -529,7 +529,7 @@ namespace SqlModelGenerator
 
                         textBoxFlutter.AppendText("\tvoid set" + listColumn[i] + "(String " + listColumn[i].Replace("ý","i").ToLower() + ")" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t{" + Environment.NewLine);
-                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i] + ";" + Environment.NewLine);
+                        textBoxFlutter.AppendText("\t\t" + listColumn[i] + " = " + listColumn[i].Replace("ý", "i").ToLower() + ";" + Environment.NewLine);
                         textBoxFlutter.AppendText("\t}" + Environment.NewLine);
                     }
                     else
