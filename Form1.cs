@@ -613,12 +613,12 @@ namespace SqlModelGenerator
                     filePath += Environment.MachineName + "\\Desktop";
                 }
 
-                filePath += "\\" + selectedTableSingular.Replace("ý", "i").ToLower() + ".dart";
+                filePath += "\\" + selectedTableSingular.ToLower().Replace("ý", "i") + ".dart";
 
                 fileText += "// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages" + Environment.NewLine + Environment.NewLine;
                 
                 fileText += "import 'package:json_annotation/json_annotation.dart';" + Environment.NewLine + Environment.NewLine;
-                fileText += "part '" + selectedTableSingular.Replace("ý", "i").ToLower() + ".g.dart';" + Environment.NewLine + Environment.NewLine;
+                fileText += "part '" + selectedTableSingular.ToLower().Replace("ý", "i") + ".g.dart';" + Environment.NewLine + Environment.NewLine;
                 fileText += "@JsonSerializable()" + Environment.NewLine;
                 fileText += "class " + selectedTableSingular + " {" + Environment.NewLine + Environment.NewLine;
 
@@ -1092,12 +1092,12 @@ namespace SqlModelGenerator
                                 fileText = "";
                                 filePath = "C:\\Users\\";
                                 filePath += Environment.MachineName + "\\Desktop";
-                                filePath += "\\" + selectedTableSingular.Replace("ý","i").ToLower() + ".dart";
+                                filePath += "\\" + selectedTableSingular.ToLower().Replace("ý","i") + ".dart";
 
                                 fileText += "// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages" + Environment.NewLine + Environment.NewLine;
 
                                 fileText += "import 'package:json_annotation/json_annotation.dart';" + Environment.NewLine + Environment.NewLine;
-                                fileText += "part '" + selectedTableSingular.Replace("ý", "i").ToLower() + ".g.dart';" + Environment.NewLine + Environment.NewLine;
+                                fileText += "part '" + selectedTableSingular.ToLower().Replace("ý", "i") + ".g.dart';" + Environment.NewLine + Environment.NewLine;
                                 fileText += "@JsonSerializable()" + Environment.NewLine;
                                 fileText += "class " + selectedTableSingular + " {" + Environment.NewLine + Environment.NewLine;
 
