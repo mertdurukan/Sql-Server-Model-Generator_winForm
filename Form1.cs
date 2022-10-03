@@ -688,19 +688,34 @@ namespace SqlModelGenerator
                 MessageBox.Show(ex.Message);
             }
         }
+        
         void makeSelectedTableSingular(string SelectedTable)
         {
             try
             {
+                //TODO önce ies bak sonra s bak
                 selectedTableSingular = SelectedTable;
 
-                if (selectedTableSingular.EndsWith("s") || selectedTableSingular.EndsWith("S"))
-                {
-                    selectedTableSingular = selectedTableSingular.Substring(0, selectedTableSingular.Length - 1);
-                }
-                else if (selectedTableSingular.EndsWith("lar") || selectedTableSingular.EndsWith("ler") || selectedTableSingular.EndsWith("ler") || selectedTableSingular.EndsWith("LAR"))
+                //TODO| First Turkish character control.
+                if (selectedTableSingular.EndsWith("ler") || selectedTableSingular.EndsWith("lar") || selectedTableSingular.EndsWith("LER") || selectedTableSingular.EndsWith("LAR"))
                 {
                     selectedTableSingular = selectedTableSingular.Substring(0, selectedTableSingular.Length - 3);
+                }
+
+                //TODO| Check English spelling rules -ies  -y
+                else if (selectedTableSingular.EndsWith("ies") || selectedTableSingular.EndsWith("IES"))
+                {
+                    selectedTableSingular = selectedTableSingular.Substring(0, selectedTableSingular.Length - 3) + "y";
+                }
+
+                //TODO| Check English spelling rules   
+                else if ()
+                {
+                }
+                else if (selectedTableSingular.EndsWith("s") || selectedTableSingular.EndsWith("S"))
+                {
+                    selectedTableSingular = selectedTableSingular.Substring(0, selectedTableSingular.Length - 1);
+
                 }
                 else
                 {
